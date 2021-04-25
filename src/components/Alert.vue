@@ -2,7 +2,7 @@
   <div
     v-bind:class="{
       'd-none': !show,
-      'bg-light d-flex align-items-center': show,
+      'bg-lighten d-flex align-items-center': show,
     }"
   >
     <div class="container">
@@ -13,7 +13,7 @@
         </span>
       </div>
     </div>
-    <div @click="closeAlert" class="ml-auto pr-3 font-weight-bold pointer">
+    <div @click="closeAlert" class="ms-auto pe-3 fw-bold pointer">
       X
     </div>
   </div>
@@ -34,8 +34,4 @@ export default {
 };
 </script>
 
-<style>
-.pointer {
-  cursor: pointer;
-}
-</style>
+<style></style>

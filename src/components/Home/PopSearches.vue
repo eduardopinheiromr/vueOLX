@@ -3,17 +3,19 @@
     <div class="container my-5">
       <div class="row">
         <div class="col-12">
-          <h3 class="text-left">Pesquisas populares</h3>
+          <h3 class="text-start">Pesquisas populares</h3>
         </div>
       </div>
       <div class="row mt-3">
-        <Chip
-          v-for="(search, key) in popSearches"
-          :key="key"
-          :link="search.link"
-          :text="search.text"
-          classname="mr-3"
-        />
+        <div class="col-12 d-flex flex-wrap">
+          <Chip
+            v-for="(search, key) in popSearches"
+            :key="key"
+            :link="search.link"
+            :text="search.text"
+            classname="me-3"
+          />
+        </div>
       </div>
     </div>
   </div>

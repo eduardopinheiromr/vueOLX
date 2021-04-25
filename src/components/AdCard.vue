@@ -5,7 +5,7 @@
       :alt="'Foto principal de ' + name"
     />
     <p class="pt-3">{{ name.slice(0, 40) }},...</p>
-    <p class="font-weight-bold">R$ {{ price }}</p>
+    <p class="fw-bold">R$ {{ price }}</p>
   </div>
 </template>
 
@@ -19,7 +19,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .product {
   max-width: 192px;
   max-height: 197x;

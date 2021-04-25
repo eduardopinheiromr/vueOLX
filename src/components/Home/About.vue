@@ -3,7 +3,7 @@
     <div class="container py-5">
       <div class="row">
         <div class="col-12">
-          <h3 class="text-left">Sobre a OLX</h3>
+          <h3 class="text-start">Sobre a OLX</h3>
         </div>
       </div>
       <div class="row no-gutters justify-content-between">
@@ -49,11 +49,10 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 .about-card {
   height: 186px;
   width: 100%;
-  max-width: 538px;
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 8px;

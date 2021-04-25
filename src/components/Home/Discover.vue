@@ -3,7 +3,7 @@
     <div class="container my-5">
       <div class="row">
         <div class="col-12">
-          <h3 class="text-left">Descubra</h3>
+          <h3 class="text-start">Descubra</h3>
         </div>
       </div>
       <div class="row no-gutters" style="height: 395px">
@@ -83,7 +83,7 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 .discover-card {
   height: 100%;
   display: flex;

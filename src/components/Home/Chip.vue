@@ -15,10 +15,13 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .chip {
   border: 1px solid #000;
   border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  width: fit-content;
+  text-decoration: none;
 }
 .chip:hover {
   border: 1px solid #6e0bd6;

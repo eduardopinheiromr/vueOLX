@@ -1,0 +1,26 @@
+* {
+  font-size: 14px;
+}
+.pointer {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: #000 !important;
+}
+.hover-bold,
+.hover-scale {
+  transition: 0.3s;
+}
+.hover-bold:hover {
+  font-weight: bold;
+}
+.hover-scale:hover {
+  transform: scale(1.2);
+}
+.bg-lighten {
+  background: #f6f6f6;
+}
+.text-purple {
+  color: #5c1a71 !important;
+}

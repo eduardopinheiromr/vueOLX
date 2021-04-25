@@ -4,7 +4,7 @@
       <div class="row mb-5">
         <div class="col-12 col-md-6 d-flex align-items-center">
           <div v-for="(link, key) in links" :key="key" class="top-links">
-            <a :href="link.url">{{ link.label }}</a>
+            <router-link :to="link.url">{{ link.label }}</router-link>
           </div>
         </div>
         <div class="col-12 col-md-6 d-flex justify-content-md-end">
@@ -13,7 +13,7 @@
             :key="key"
             :class="'social ' + media.name"
           >
-            <a :href="media.link"
+            <a :href="media.link" target="_blank" rel="noreferrer"
               ><img :src="media.image" :alt="media.name"
             /></a>
           </div>
@@ -43,10 +43,10 @@ export default {
   data() {
     return {
       links: [
-        { label: "Ajuda e contato", url: "#" },
-        { label: "Dicas de segurança", url: "#" },
-        { label: "Vender na OLX", url: "#" },
-        { label: "Plano Profissional", url: "#" },
+        { label: "Ajuda e contato", url: "/faq" },
+        { label: "Dicas de segurança", url: "/seguranca" },
+        { label: "Vender na OLX", url: "/vender" },
+        { label: "Plano Profissional", url: "/planos" },
       ],
       socialMedia: [
         {
@@ -80,7 +80,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 footer {
   border-top: 1px solid lightgrey;
 }
@@ -91,6 +91,7 @@ footer * {
 footer a {
   padding: 0;
   border-bottom: 1px solid grey;
+  text-decoration: none;
 }
 footer a:hover {
   text-decoration: none;

@@ -2,17 +2,19 @@
   <div class="bg-light py-5">
     <div class="container">
       <div class="row">
-        <div class="col-12 col-md-6 text-center text-md-left">
+        <div class="col-12 col-md-6 text-center text-md-start">
           <h3>Galeria Premium</h3>
         </div>
-        <div class="col-12 col-md-6 text-center text-md-right">
+        <div class="col-12 col-md-6 text-center text-md-end">
           <p>
             Quer vender mais rápido? <a href="#">Quer vender mais rápido?</a>
           </p>
         </div>
       </div>
-      <div class="row mt-3 flex-nowrap d-flex overflow-x-scroll max-height-250">
-        <div v-for="(ad, key) in premiumAds" :key="key" class="mr-5">
+      <div
+        class="px-3 mt-3 flex-nowrap d-flex overflow-x-scroll max-height-250"
+      >
+        <div v-for="(ad, key) in premiumAds" :key="key" class="me-5">
           <AdCard :image="ad.image" :name="ad.name" :price="ad.price" />
         </div>
       </div>
@@ -83,7 +85,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .overflow-x-scroll {
   overflow-x: scroll;
 }

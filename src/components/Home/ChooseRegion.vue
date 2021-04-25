@@ -6,8 +6,12 @@
       </div>
       <div class="row">
         <div class="d-flex flex-wrap">
-          <div v-for="(region, key) in regions" :key="key">
-            <a :href="region.link">{{ region.name }}</a>
+          <div class="me-2" v-for="(region, key) in regions" :key="key">
+            <a
+              class="h5 text-purple text-decoration-none"
+              :href="region.link"
+              >{{ region.name }}</a
+            >
           </div>
         </div>
       </div>

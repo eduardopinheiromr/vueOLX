@@ -1,4 +1,6 @@
-Este repo é um estudo do VueJS, tem como objetivo o aprendizado do framework e recriar o site da OLX.
+Este repositório é um estudo do VueJS, tem como objetivo o aprendizado do framework e recriar o site da OLX.
+
+**Link do deploy: https://vue-olx.vercel.app/**
 
 # CHECKLIST DE ESTUDOS VUE.JS
 

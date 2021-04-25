@@ -25,21 +25,26 @@
         <div
           class="col-12 text-white d-flex flex-wrap justify-content-center justify-content-md-between py-4"
         >
-          <a
+          <router-link
             v-for="(category, key) in categories"
             :key="key"
-            :href="category.link"
-            class="category d-flex flex-column justify-content-center align-items-center text-white pointer"
+            :to="category.link"
+            class="category mb-3 scale-children text-decoration-none d-flex flex-column justify-content-center align-items-center text-white pointer"
           >
             <div
               class="rounded-circle bg-white icon mb-2 d-flex justify-content-center align-items-center"
             >
-              <img :src="category.image" height="30" width="30" />
+              <img
+                class="transition-02"
+                :src="category.image"
+                height="30"
+                width="30"
+              />
             </div>
             <p class="category-name text-center">
               {{ category.name }}
             </p>
-          </a>
+          </router-link>
         </div>
       </div>
     </div>
@@ -55,46 +60,57 @@ export default {
       categories: [
         {
           name: "Imóveis",
+          link: "/",
           image: require("../../assets/icons/categories/imoveis.svg"),
         },
         {
           name: "Autos e peças",
+          link: "/",
           image: require(`../../assets/icons/categories/autos-e-pecas.svg`),
         },
         {
           name: "Para a sua casa",
+          link: "/",
           image: require(`../../assets/icons/categories/para-a-sua-casa.svg`),
         },
         {
           name: "Eletrônicos e celulares",
+          link: "/",
           image: require(`../../assets/icons/categories/eletronicos-e-celulares.svg`),
         },
         {
           name: "Vagas de emprego",
+          link: "/",
           image: require(`../../assets/icons/categories/vagas-de-emprego.svg`),
         },
         {
           name: "Serviços",
+          link: "/",
           image: require(`../../assets/icons/categories/servicos.svg`),
         },
         {
           name: "Músicas e hobbies",
+          link: "/",
           image: require(`../../assets/icons/categories/autos-e-pecas.svg`),
         },
         {
           name: "Esportes e lazer",
+          link: "/",
           image: require(`../../assets/icons/categories/musicas-e-hobbies.svg`),
         },
         {
           name: "Moda e beleza",
+          link: "/",
           image: require(`../../assets/icons/categories/moda-e-beleza.svg`),
         },
         {
           name: "Agro e indústria",
+          link: "/",
           image: require(`../../assets/icons/categories/agro-e-industria.svg`),
         },
         {
           name: "Todas as categorias",
+          link: "/",
           image: require(`../../assets/icons/categories/todas-as-categorias.svg`),
         },
       ],
@@ -111,7 +127,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .bg-purple {
   background: #6e0bd6;
 }
@@ -144,5 +160,11 @@ export default {
 }
 .search-btn:hover > img {
   filter: invert(1);
+}
+.transition-02 {
+  transition: 0.2s;
+}
+.scale-children:hover > div > img {
+  transform: scale(1.2);
 }
 </style>
