@@ -1,11 +1,12 @@
 <template>
+  <Alert />
   <div class="container my-3">
     <div class="d-flex align-items-center">
       <a href="/"> <img src="../assets/logo.webp" width="48"/></a>
       <a class="ml-5" href="#">Buscar</a>
       <div class="ml-auto mr-3 d-flex align-items-center flex-wrap">
         <div v-for="(item, key) in menu" :key="key">
-          <a :href="item.link">{{ item.label }}</a>
+          <router-link :to="item.link">{{ item.label }}</router-link>
         </div>
         <button class="btn btn-warning text-white py-2 px-4">Anunciar</button>
       </div>
@@ -14,6 +15,7 @@
 </template>
 
 <script>
+import Alert from "./Alert.vue";
 export default {
   data() {
     return {
@@ -24,6 +26,9 @@ export default {
         { id: 4, label: "Entrar", link: "/entrar" },
       ],
     };
+  },
+  components: {
+    Alert,
   },
 };
 </script>
