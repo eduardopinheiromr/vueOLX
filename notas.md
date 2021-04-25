@@ -1,5 +1,3 @@
-Este repo é um estudo do VueJS, tem como objetivo o aprendizado do framework e recriar o site da OLX.
-
 # CHECKLIST DE ESTUDOS VUE.JS
 
 - ### Convenções
