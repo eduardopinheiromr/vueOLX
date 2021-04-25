@@ -8,23 +8,30 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 import router from "./router";
 import firebase from "firebase/app";
+import store from "./store";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyC8R5I3WUaIfinaJGLdFn7gyoepcxJHdxM",
-  authDomain: "vueolx.firebaseapp.com",
-  projectId: "vueolx",
-  storageBucket: "vueolx.appspot.com",
-  messagingSenderId: "611651939224",
-  appId: "1:611651939224:web:a2a07aa427297bacf559ed",
-  measurementId: "G-19NZTZ1Z0Q",
+  apiKey: process.env.VUE_APP_FIREBASE_apiKey,
+  authDomain: process.env.VUE_APP_FIREBASE_authDomain,
+  projectId: process.env.VUE_APP_FIREBASE_projectId,
+  storageBucket: process.env.VUE_APP_FIREBASE_storageBucket,
+  messagingSenderId: process.env.VUE_APP_FIREBASE_messagingSenderId,
+  appId: process.env.VUE_APP_FIREBASE_appId,
+  measurementId: process.env.VUE_APP_FIREBASE_measurementId,
 };
 
 firebase.initializeApp(firebaseConfig);
 
+firebase.auth().onAuthStateChanged(user => {
+  console.log(user);
+  store.dispatch("fetchUser", user);
+});
+
 const head = createHead();
 
 createApp(App)
+  .use(store)
   .use(router)
   .use(head)
   .mount("#app");

@@ -11,6 +11,7 @@ const routes = [
   { path: "/cadastro", component: () => import("../views/Register.vue") },
   { path: "/ad/:id", component: () => import("../views/AdPage.vue") },
   { path: "/:category", component: () => import("../views/CategoryPage") },
+  { path: "/anuncios", component: () => import("../views/MyAds") },
 ];
 
 const router = createRouter({

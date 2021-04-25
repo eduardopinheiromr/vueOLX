@@ -8,6 +8,12 @@
             "assets/*": [
                 "src/assets/*"
             ],
+            "images/*": [
+                "src/assets/images/*"
+            ],
+            "icons/*": [
+                "src/assets/icons/*"
+            ],
             "views/*": [
                 "src/views/*"
             ]
