@@ -60,57 +60,57 @@ export default {
       categories: [
         {
           name: "Imóveis",
-          link: "/",
+          link: "/imoveis",
           image: require("../../assets/icons/categories/imoveis.svg"),
         },
         {
           name: "Autos e peças",
-          link: "/",
+          link: "/autos-e-pecas",
           image: require(`../../assets/icons/categories/autos-e-pecas.svg`),
         },
         {
           name: "Para a sua casa",
-          link: "/",
+          link: "/para-a-sua-casa",
           image: require(`../../assets/icons/categories/para-a-sua-casa.svg`),
         },
         {
           name: "Eletrônicos e celulares",
-          link: "/",
+          link: "/eletronicos-e-celulares",
           image: require(`../../assets/icons/categories/eletronicos-e-celulares.svg`),
         },
         {
           name: "Vagas de emprego",
-          link: "/",
+          link: "/vagas-de-emprego",
           image: require(`../../assets/icons/categories/vagas-de-emprego.svg`),
         },
         {
           name: "Serviços",
-          link: "/",
+          link: "/servicos",
           image: require(`../../assets/icons/categories/servicos.svg`),
         },
         {
           name: "Músicas e hobbies",
-          link: "/",
+          link: "/autos-e-pecas",
           image: require(`../../assets/icons/categories/autos-e-pecas.svg`),
         },
         {
           name: "Esportes e lazer",
-          link: "/",
+          link: "/musicas-e-hobbies",
           image: require(`../../assets/icons/categories/musicas-e-hobbies.svg`),
         },
         {
           name: "Moda e beleza",
-          link: "/",
+          link: "/moda-e-beleza",
           image: require(`../../assets/icons/categories/moda-e-beleza.svg`),
         },
         {
           name: "Agro e indústria",
-          link: "/",
+          link: "/agro-e-industria",
           image: require(`../../assets/icons/categories/agro-e-industria.svg`),
         },
         {
           name: "Todas as categorias",
-          link: "/",
+          link: "/todas-as-categorias",
           image: require(`../../assets/icons/categories/todas-as-categorias.svg`),
         },
       ],

@@ -1,14 +1,17 @@
-Este repositório é um estudo do VueJS, tem como objetivo o aprendizado do framework e recriar o site da OLX.
+Este repositório é um estudo do Vue.js(3.0), tem como objetivo o aprendizado do framework e recriar o site da OLX. As anotações abaixo, tem como propósito resumir os conhecimentos obtidos ao longo do processo.
 
 **Link do deploy: https://vue-olx.vercel.app/**
+<br/>
+<br/>
+<br/>
 
-# CHECKLIST DE ESTUDOS VUE.JS
+# ESTUDOS VUE.JS
 
-- ### Convenções
+- ### **Convenções**
 
-  - Nomes de componentes(É melhor começar com letra maiuscula ou tudo minúsculo separado por hífen?)
+  - Nomes de componentes(Começar com letra maiuscula ou tudo minúsculo separado por hífen?)
 
-- ### Uso de diretivas do Vue:
+- ### **Uso de diretivas do Vue:**
 
   - v-show
   - v-if
@@ -18,15 +21,19 @@ Este repositório é um estudo do VueJS, tem como objetivo o aprendizado do fram
   - v-bind(:)
   - v-model
 
-- ### Construção de rotas
+- ### **Construção de rotas**
 
   - Rotas estáticas
   - Rotas dinâmicas
 
-- ### Uso de bibliotecas CSS
+- ### **Uso de bibliotecas CSS**
+
   - Bootstrap
   - Material UI
-  - Styled Components?
+  - Styled Components
+
+- ### **Meta tags e SEO**
+  - Como injetar meta tags nas views facilmente utilizando a biblioteca **vue-head**
 
 ---
 
@@ -85,3 +92,33 @@ Two Way(podemos alterar e ler)
 ####
 
     <input type="text" :value="nome-da-variavel" v-model="nome-da-variavel" />
+
+## **Construção de rotas**
+
+### **Rotas estáticas**
+
+Através do plugin vue-router, é possível criar rotas estáticas dentro da pasta "@views". Elas devem ser inclusas no "@router", no array **routes**.
+
+####
+
+    const routes = [
+      {
+        path: "/",
+        name: "Home",
+        component: Home,
+      }
+    ]
+
+### **Rotas dinâmicas**
+
+Para criar rotas dinâmicas, passamos os parâmetros na rota, como no Express.js.<br/>
+No componente destinado, capturamos parâmetros da seguinte forma: **\$route.params.nomeDoParametro**
+
+####
+
+    const routes = [
+      {
+        path: "/ad/:id",
+        component: AdPage,
+      }
+    ]
