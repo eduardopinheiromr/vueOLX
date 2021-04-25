@@ -23,8 +23,14 @@
               item.label
             }}</router-link>
           </li>
+          <li class="nav-item" v-if="!isLogged">
+            <router-link to="/entrar" class="nav-link">Entrar</router-link>
+          </li>
+          <li class="nav-item" v-if="isLogged">
+            <p class="nav-link">Olá {{ name }}</p>
+          </li>
           <li class="nav-item">
-            <button class="btn btn-warning text-white py-2 px-4">
+            <button class="btn-olx-p">
               Anunciar
             </button>
           </li>
@@ -36,14 +42,31 @@
 
 <script>
 import Alert from "./Alert.vue";
+import { onBeforeMount, ref } from "vue";
+import firebase from "firebase/app";
+import "firebase/auth";
+const isLogged = false;
 export default {
+  setup() {
+    const name = ref("");
+    onBeforeMount(() => {
+      const user = firebase.auth().currentUser;
+      if (user) {
+        name.value = user.email.split("@")[0];
+      }
+    });
+    return {
+      name,
+      isLogged,
+    };
+  },
   data() {
     return {
+      user: [],
       menu: [
         { id: 1, label: "Plano Profissional", link: "/plano-profissional" },
         { id: 2, label: "Meus Anúncios", link: "/meus-anuncios" },
         { id: 3, label: "Chat", link: "/chat" },
-        { id: 4, label: "Entrar", link: "/entrar" },
       ],
     };
   },

@@ -65,7 +65,7 @@ Quando escrito em PascalCase, você também pode chamá-lo de ambas as formas, p
 
 ### **Renderização condicional**
 
-**v-if, v-else-if, v-else, v-show** são as diretivas para renderização condicional. O v-show deve ser usado quando não há else-if nem else.
+**v-if, v-else-if, v-else, v-show** são as diretivas para renderização condicional. O v-show mantém o elemento no DOM, alterando apenas a propriedade 'display' do CSS. Em componentes que constantemente serão renderizados, o v-show se torna menos custoso, pois altera somente o DOM.
 
 ### **Laços de repetição**
 
