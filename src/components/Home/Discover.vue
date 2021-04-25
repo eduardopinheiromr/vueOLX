@@ -6,7 +6,7 @@
           <h3 class="text-start">Descubra</h3>
         </div>
       </div>
-      <div class="row no-gutters" style="height: 395px">
+      <div class="row g-0" style="height: 395px">
         <div class="col-12 col-md-3">
           <div class="discover-card b-radius-left">
             <img

@@ -116,22 +116,14 @@
       </div>
     </div>
   </div>
+  <AuthLock />
 </template>
 
 <script>
-import { useRouter } from "vue-router";
-import firebase from "firebase/app";
-import "firebase/auth";
-
+import AuthLock from "@/components/AuthLock";
 export default {
-  setup() {
-    const router = useRouter();
-
-    firebase.auth().onAuthStateChanged(user => {
-      if (!user) {
-        router.replace("/");
-      }
-    });
+  components: {
+    AuthLock,
   },
 };
 </script>

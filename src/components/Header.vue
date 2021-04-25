@@ -17,15 +17,16 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto d-flex align-items-center">
           <li
-            class="nav-item d-flex align-items-center"
+            class="nav-item d-flex align-items-center me-3"
             v-for="(item, key) in menu"
             :key="key"
           >
-            <router-link :to="item.link" class="nav-link">{{
-              item.label
-            }}</router-link>
+            <router-link :to="item.link" class="ms-2 nav-link">
+              <i :class="item.icon" />
+              {{ item.label }}</router-link
+            >
           </li>
           <li class="nav-item d-flex align-items-center" v-if="!user.loggedIn">
             <router-link to="/entrar" class="nav-link">Entrar</router-link>
@@ -43,7 +44,7 @@
                 v-else
                 class="rounded-circle p-2 bg-lighten d-flex align-items-center justify-content-center"
               >
-                <img src="@/assets/icons/user.svg" />
+                <i class="bi bi-person-fill" style="color: #6E0DD6" />
               </div>
               <p class="ms-2 mb-0">{{ user.data.displayName }}</p>
             </a>
@@ -55,10 +56,13 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <button class="btn-olx-p">
+          <li class="nav-item ms-xl-5">
+            <router-link
+              to="/anunciar"
+              class="btn-olx-p text-decoration-none text-white"
+            >
               Anunciar
-            </button>
+            </router-link>
           </li>
         </ul>
       </div>
@@ -94,9 +98,19 @@ export default {
   data() {
     return {
       menu: [
-        { id: 1, label: "Plano Profissional", link: "/plano-profissional" },
-        { id: 2, label: "Meus Anúncios", link: "/anuncios" },
-        { id: 3, label: "Chat", link: "/chat" },
+        {
+          id: 1,
+          icon: "bi bi-briefcase",
+          label: "Plano Profissional",
+          link: "/plano-profissional",
+        },
+        {
+          id: 2,
+          icon: "bi bi-columns-gap",
+          label: "Meus Anúncios",
+          link: "/anuncios",
+        },
+        { id: 3, icon: "bi bi-chat", label: "Chat", link: "/chat" },
       ],
     };
   },

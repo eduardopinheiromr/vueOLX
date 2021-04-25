@@ -6,7 +6,7 @@
           <h3 class="text-start">Sobre a OLX</h3>
         </div>
       </div>
-      <div class="row no-gutters justify-content-between">
+      <div class="row justify-content-between">
         <div class="col-12 col-md-6">
           <div
             class="about-card d-flex justify-content-start align-items-center position-relative px-4"
