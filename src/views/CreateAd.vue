@@ -67,24 +67,22 @@
 
 <script>
 import AuthLock from "@/components/AuthLock.vue";
+import { postNewAd } from "../services";
 import { ref } from "vue";
+import store from "@/store";
 
 export default {
   setup() {
+    const userState = { ...store.getters.user.data };
     const title = ref("");
     const description = ref("");
-    const contact = ref("");
+    const contact = ref(userState.phoneNumber ?? "");
     const zipcode = ref("");
     const number = ref("");
 
-    const createAd = () => {
-      //   console.log({
-      //     title: this.title,
-      //     description: this.description,
-      //     contact: this.contact,
-      //     address: this.address,
-      //   });
-      console.log({
+    const createAd = async () => {
+      await postNewAd({
+        userId: userState.uid,
         title: title.value,
         description: description.value,
         contact: contact.value,
@@ -98,4 +96,4 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped></style>

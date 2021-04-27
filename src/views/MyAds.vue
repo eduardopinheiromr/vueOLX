@@ -83,6 +83,7 @@
             aria-labelledby="home-tab"
           >
             <div
+              v-if="ads === null || ads.length === 0"
               class="d-flex flex-column justify-content-center align-items-center py-5"
             >
               <img
@@ -94,6 +95,14 @@
               <p class="my-5">
                 Você não possui anúncios publicados no momento
               </p>
+            </div>
+            <div v-for="(ad, key) in ads" :key="key">
+              <h3>{{ ad.title }}</h3>
+              <p>{{ ad.description }}</p>
+              <p>{{ ad.contact }}</p>
+              <p>{{ ad.zipcode }}</p>
+              <p>{{ ad.number }}</p>
+              <p>{{ ad.price }}</p>
             </div>
           </div>
           <div
@@ -121,7 +130,39 @@
 
 <script>
 import AuthLock from "@/components/AuthLock";
+import { getAdsByUid } from "@/services";
+import { useStore } from "vuex";
+import { computed } from "@vue/runtime-core";
+
 export default {
+  computed: {
+    ads() {
+      return this.$store.state.user.ads;
+    },
+  },
+  methods: {
+    fetchAds() {
+      const uid = this.$store.state.user.data.uid;
+      if (this.$store.state.user.ads == null) {
+        getAdsByUid(uid).then(ads => {
+          console.log(ads);
+          this.$store.dispatch("myAds", ads);
+        });
+      }
+    },
+  },
+  setup() {
+    const store = useStore();
+    const { uid } = computed(() => store.state.user.data);
+    const ads = computed(() => store.state.user.ads);
+
+    if (ads.value === null) {
+      getAdsByUid(uid).then(ads => {
+        console.log("fetched =>", ads);
+        store.dispatch("myAds", ads);
+      });
+    }
+  },
   components: {
     AuthLock,
   },
